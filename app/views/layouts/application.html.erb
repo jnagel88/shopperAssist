@@ -2,6 +2,7 @@
 <html>
   <head>
     <title>ShopperAssist</title>
+     <meta name="viewport" content="width=device-width, initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -13,7 +14,10 @@
 
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
-
-    <%= yield %>
+    
+    <div class="container">
+      <%= yield %>
+    </div>
+  
   </body>
 </html>

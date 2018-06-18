@@ -1,18 +1,29 @@
-<h1> items#index</h1>
+<h1> Shopper Assist</h1>
 
+<div class="col-md-6 offset-md-3">
+	<div>
+		<%= form_tag do %>
+      <%= text_field_tag 'new_item', nil, placeholder:'Enter Item', class:'form-control', style:'width: 300px' %>
+      <%= submit_tag "Add Item", class:'btn btn-primary' %>
+		<% end %>
 
-<table>
-	<tr>
-		<th>status</th>
-		<th>Item</th>
-		<th>actions</th>
-	</tr>
+	</div>
 
-<%= @items.each do |item| %>
-	<tr>
-		<td><%=  %></td>
-		<td><%= item.content %></td>
-		<td><%=  %></td>
-	</tr>
+	<table class="table table-hover table-striped">
+		<thead>
+			<th style="width: 20px"></th>
+			<th style="width: 10px">Status</th>
+			<th>Item</th>
+			<th style="width: 20px"></th>
+		</thead>
 
-	</table>
+	<% @items.each do |item| %>
+		<tr>
+			<td><span class="draganddrop"></span></td>
+			<td><input type="checkbox" aria-label="Checkbox for following text input"><%= item.status %></td>
+			<td><%= item.content %></td>
+			<td><%= fa_icon "fas times" %></td>
+		</tr>
+	<% end %>
+		</table>
+</div>
